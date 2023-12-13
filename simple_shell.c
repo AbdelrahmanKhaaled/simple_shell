@@ -20,7 +20,6 @@ int main(void)
 	{
 		char bin[32] = "/bin/";
 
-		display_prompt();
 		fflush(stdout);
 		_getline(cmd);
 		argc = get_arguments(argv, cmd, delim, bin);
@@ -33,19 +32,16 @@ int main(void)
 			{
 				status = atoi(argv[1]);
 				exit(status); }
-			exit(0);
-		}
+			exit(0); }
 		if (pid == 0)
 		{
 			if (strcmp(argv[0], "/bin/setenv") == 0 ||
 			strcmp(argv[0], "/bin/unsetenv") == 0)
 			{
-				set_unsetENV(argv, argc);
-			}
+				set_unsetENV(argv, argc); }
 			else
 				execution(argv, environ);
-			argc = 0;
-		}
+			argc = 0; }
 		else
 			wait(NULL);
 	}
