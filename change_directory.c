@@ -19,5 +19,4 @@ void change_directory(char **argv)
 	{
 		perror("setenv failed");
 	}
-	return;
 }
