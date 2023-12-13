@@ -8,7 +8,7 @@
 #include <sys/wait.h>
 #include <time.h>
 #include <stdbool.h>
-
+#include <errno.h>
 #define BUFFER_SIZE 1024
 
 void set_unsetENV(char **argv, int argc);

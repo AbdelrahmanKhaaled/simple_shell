@@ -16,6 +16,11 @@ char *_strtok(char *str, char *delimiter)
 
 	if (str != NULL)
 		string = str;
+	if (*string == ' ')
+	{
+		while (*string == ' ')
+			string++;
+	}
 	substring = string;
 	while (*string != '\0')
 	{
@@ -23,11 +28,13 @@ char *_strtok(char *str, char *delimiter)
 		{
 			*string = '\0';
 			string++;
-			return (substring); }
+			return (substring);
+		}
 		string++;
 	}
 	if (*substring  == '\0')
 	{
-		return (NULL); }
+		return (NULL);
+	}
 	return (substring);
 }

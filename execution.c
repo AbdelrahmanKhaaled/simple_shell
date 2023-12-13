@@ -31,7 +31,7 @@ void execution(char **argv, char **environ)
 	else
 	{
 		execve(argv[0], argv, NULL);
-		perror("execve");
-		return;
-	}
+		perror(argv[0]);
+		exit(errno);
+	}	
 }
