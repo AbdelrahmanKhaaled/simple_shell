@@ -28,7 +28,6 @@ int get_arguments(char **argv, char *cmd, char *delim, char *bin)
 		}
 		else
 			argv[argc] = token;
-		printf("Sub = %s\n", argv[argc]);
 		token = _strtok(NULL, delim);
 		argc++;
 	}

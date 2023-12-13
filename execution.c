@@ -5,7 +5,6 @@
  *
  * @argv: checks input of function
  * @environ: checks input of function
- * @pid: checks input of function
 */
 
 
@@ -21,11 +20,14 @@ void execution(char **argv, char **environ)
 			printf("%s\n", *env);
 			env++;
 		}
+		exit(0);
 	}
-	else if (strcmp(argv[0], "/bin/cd") == 0)
-	{
-		change_directory(argv);
-	}
+	/**
+	 * else if (strcmp(argv[0], "/bin/cd") == 0)
+	*{
+	*	change_directory(argv);
+	*}
+	*/
 	else
 	{
 		execve(argv[0], argv, NULL);
