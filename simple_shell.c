@@ -5,10 +5,13 @@
  *
  * Description: Simple Shell.
  *
+ * @argco:checks input of function
+ * @args:checks input of function
+ *
  * Return: 0 (Success) -1 (Failuer)
 */
 
-int main(void)
+int main(int argco, char **args)
 {
 	char cmd[BUFFER_SIZE], *delim = " \n";
 	int argc = 0;
@@ -16,6 +19,7 @@ int main(void)
 	pid_t pid;
 	int status;
 
+	(void) argco;
 	while (1)
 	{
 		char bin[32] = "/bin/";
@@ -39,9 +43,10 @@ int main(void)
 			if (strcmp(argv[0], "/bin/setenv") == 0 ||
 			strcmp(argv[0], "/bin/unsetenv") == 0)
 			{
-				set_unsetENV(argv, argc); }
+				set_unsetENV(argv, argc, args);
+			}
 			else
-				execution(argv, environ);
+				execution(argv, environ, args);
 			argc = 0; }
 		else
 			wait(NULL);

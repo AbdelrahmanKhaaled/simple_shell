@@ -4,11 +4,12 @@
  * execution - to execute program.
  *
  * @argv: checks input of function
+ * @args: checks input of function
  * @environ: checks input of function
 */
 
 
-void execution(char **argv, char **environ)
+void execution(char **argv, char **environ, char **args)
 {
 	if (strcmp(argv[0], "/bin/env") == 0 ||
 	strcmp(argv[0], "/bin/printenv") == 0)
@@ -31,7 +32,7 @@ void execution(char **argv, char **environ)
 	else
 	{
 		execve(argv[0], argv, NULL);
-		perror(argv[0]);
+		perror(args[0]);
 		exit(errno);
-	}	
+	}
 }

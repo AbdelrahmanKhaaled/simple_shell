@@ -7,7 +7,7 @@
  * @argc: checks input of function
 */
 
-void set_unsetENV(char **argv, int argc)
+void set_unsetENV(char **argv, int argc, char **args)
 {
 	if (strcmp(argv[0], "/bin/setenv") == 0)
 	{
@@ -17,7 +17,7 @@ void set_unsetENV(char **argv, int argc)
 		}
 		if (setenv(argv[1], argv[2], 1) != 0)
 		{
-			perror("setenv failed");
+			perror(args[0]);
 		}
 	}
 	else if (strcmp(argv[0], "/bin/unsetenv") == 0)
@@ -28,7 +28,7 @@ void set_unsetENV(char **argv, int argc)
 		}
 		if (unsetenv(argv[1]) != 0)
 		{
-			perror("unsetenv failed");
+			perror(args[0]);
 		}
 	}
 	else
