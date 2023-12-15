@@ -24,7 +24,6 @@ int main(int argco, char **args)
 	{
 		char bin[32] = "/bin/";
 
-		display_prompt();
 		fflush(stdout);
 		_getline(cmd);
 		argc = get_arguments(argv, cmd, delim, bin);
