@@ -5,6 +5,7 @@
  *
  * @argv: checks input of function
  * @argc: checks input of function
+ * @args: checks input of function
 */
 
 void set_unsetENV(char **argv, int argc, char **args)
