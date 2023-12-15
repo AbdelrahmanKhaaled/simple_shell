@@ -23,7 +23,7 @@ int get_arguments(char **argv, char *cmd, char *delim, char *bin)
 		strncpy(substr, token, 5);
 		if (strcmp(substr, bin) != 0 && argc == 0)
 		{
-			strcat(bin, token);
+			strcat(bin, token);	
 			argv[argc] = bin;
 		}
 		else

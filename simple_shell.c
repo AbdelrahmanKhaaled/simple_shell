@@ -18,7 +18,7 @@ int main(int argco, char **args)
 	char *argv[32];
 	pid_t pid;
 	int status;
-	char bin[6] = "/bin/";
+	char bin[32] = "/bin/";
 
 	(void) argco;
 
